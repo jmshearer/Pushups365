@@ -13,6 +13,47 @@
   }
 }
 
+.ButtonBar {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 75px;    
+  z-index: 999;
+}
+
+.SimpleButton {
+  display: inline-block;
+  width: 25%;
+  height: 75px;  
+  color: white;
+  font-size: 2em;
+  background: brown;
+  text-align: center;
+  line-height: 75px;
+}
+
+.ProgressHolder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+  background: gray;
+  user-select: none;
+  color: white;
+  font-size: 2em;  
+  text-align: center;    
+}
+
+.Progress {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  left: 0;
+  right: 0;
+  background-color: green;  
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
