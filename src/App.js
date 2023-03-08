@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import VerticalProgressBar from  './Include/VerticalProgressBar.js';
-
+import {toast, Toaster} from "react-hot-toast";
 
 
 class PushupTracker extends React.Component {
@@ -22,6 +22,7 @@ class PushupTracker extends React.Component {
     }    
 
     this.addValue = this.addValue.bind(this);
+    this.handleShare = this.handleShare.bind(this);
   }
 
   setState(newState){    
@@ -38,26 +39,30 @@ class PushupTracker extends React.Component {
     return day;
   }
 
-  handleClick(){    
-    this.setState({
-      numCompleted: (this.state.numCompleted+1)
-    })    
-    console.log(this.state.numCompleted);
-  }
-
   handleOptions(e){    
     this.setState({
       numCompleted: 0
     })    
   }
 
+  handleShare(e){
+    if(this.state.numCompleted<this.state.target){
+      navigator.clipboard.writeText("💪x" + this.state.numCompleted + "...");
+    } else {
+      navigator.clipboard.writeText("💪x" + this.state.numCompleted);
+    }
+    toast('Results copied to clipboard');
+  }
+
   render() {    
-    return <div>        
+    return <div>                
+        <Toaster position="top-center"/>
         <div className="ButtonBar">
           <button className="SimpleButton" onClick={this.addValue}>-10</button>
           <button className="SimpleButton" onClick={this.addValue}>-1</button>
           <button className="SimpleButton" onClick={this.addValue}>1</button>
           <button className="SimpleButton" onClick={this.addValue}>10</button>          
+          <button className="SimpleButton" onClick={this.handleShare}>Share</button>
         </div>
         <VerticalProgressBar maxValue={this.state.target} currentValue={this.state.numCompleted}></VerticalProgressBar>                
       </div>        
