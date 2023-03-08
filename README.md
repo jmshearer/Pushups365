@@ -1,6 +1,6 @@
 # Pushups365!
 
-This project was inspired by my nephew who encouraged me to do one pushup per day, adding one each day...  January 1=1, January 31=31, etc...
+This project was inspired by my nephew who encouraged me to do one pushup per day, adding one each day...  January 1=1, January 31=31, ... December 31=365.
 
 ### Demo
 
