@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import VerticalProgressBar from  './Include/VerticalProgressBar.js';
 import {toast, Toaster} from "react-hot-toast";
+import ConfettiExplosion from 'react-confetti-explosion';
+
 
 
 class PushupTracker extends React.Component {
@@ -55,6 +57,7 @@ class PushupTracker extends React.Component {
   }
 
   render() {    
+    var isCompleted = (this.state.target == this.state.numCompleted);
     return <div>                
         <Toaster position="top-center"/>
         <div className="ButtonBar">
@@ -62,9 +65,12 @@ class PushupTracker extends React.Component {
           <button className="SimpleButton" onClick={this.addValue}>-1</button>
           <button className="SimpleButton" onClick={this.addValue}>1</button>
           <button className="SimpleButton" onClick={this.addValue}>10</button>          
-          <button className="SimpleButton" onClick={this.handleShare}>Share</button>
+          <button className="SimpleButton" onClick={this.handleShare}>💪</button>
         </div>
-        <VerticalProgressBar maxValue={this.state.target} currentValue={this.state.numCompleted}></VerticalProgressBar>                
+        <VerticalProgressBar maxValue={this.state.target} currentValue={this.state.numCompleted}>          
+        </VerticalProgressBar>                        
+        <center>{isCompleted && <ConfettiExplosion />}</center>
+        
       </div>        
   }
 
@@ -72,6 +78,9 @@ class PushupTracker extends React.Component {
     var newNumCompleted =this.state.numCompleted+parseInt(event.target.innerText);
     if(newNumCompleted<0){
       newNumCompleted=0;
+    }
+    if(newNumCompleted>this.state.target){
+      newNumCompleted=this.state.target;
     }
     this.setState({
       numCompleted: newNumCompleted
