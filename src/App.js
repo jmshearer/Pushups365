@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import VerticalProgressBar from  './Include/VerticalProgressBar.js';
 import {toast, Toaster} from "react-hot-toast";
 import ConfettiExplosion from 'react-confetti-explosion';
+import {ShareButton, NumButton, ButtonBar} from './Include/ButtonBar.js';
 
+/*<button className="SimpleButton" onClick={this.handleShare}>💪</button>*/
 
 
 class PushupTracker extends React.Component {
@@ -58,24 +60,30 @@ class PushupTracker extends React.Component {
 
   render() {    
     var isCompleted = (this.state.target == this.state.numCompleted);
+    var shareMessage = "💪x" + this.state.numCompleted;
     return <div>                
         <Toaster position="top-center"/>
-        <div className="ButtonBar">
-          <button className="SimpleButton" onClick={this.addValue}>-10</button>
-          <button className="SimpleButton" onClick={this.addValue}>-1</button>
-          <button className="SimpleButton" onClick={this.addValue}>1</button>
-          <button className="SimpleButton" onClick={this.addValue}>10</button>          
-          <button className="SimpleButton" onClick={this.handleShare}>💪</button>
-        </div>
+        <ButtonBar>
+          <NumButton value="-10" onClick={this.addValue} />
+          <NumButton value="-1" onClick={this.addValue} />
+          <NumButton value="1" onClick={this.addValue} />
+          <NumButton value="10" onClick={this.addValue} />                              
+        </ButtonBar>        
         <VerticalProgressBar maxValue={this.state.target} currentValue={this.state.numCompleted}>          
-        </VerticalProgressBar>                        
-        <center>{isCompleted && <ConfettiExplosion />}</center>
+        </VerticalProgressBar>                                
+        <center>          
+          {isCompleted &&
+            <div className="CompletedBadge">
+              <ConfettiExplosion />
+              <ShareButton onClick={this.handleShare} value={shareMessage} />
+            </div>}        
+        </center>
         
       </div>        
   }
 
   addValue(event){    
-    var newNumCompleted =this.state.numCompleted+parseInt(event.target.innerText);
+    var newNumCompleted =this.state.numCompleted+parseInt(event.target.value);
     if(newNumCompleted<0){
       newNumCompleted=0;
     }
