@@ -20,7 +20,7 @@ export class ButtonBar extends React.Component {
             </div>;         
         } else {
             return  <div className="ButtonBar" onClick={this.onButtonBarClick}>
-                <button className="SimpleButton" onClick={this.onExpand}>+</button>
+                <button className="SimpleButton Expand" onClick={this.onExpand}>+</button>
             </div>;         
         }
    }

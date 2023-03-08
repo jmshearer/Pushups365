@@ -14,7 +14,13 @@ $fontFamily: 'Press Start 2P';
 
 body {
   font-family: $fontFamily;
-  user-select: none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .App {
@@ -39,7 +45,7 @@ body {
   height: 75px;    
   z-index: 999;
   text-align: center;
-  font-family: $fontFamily;
+  font-family: $fontFamily;  
 }
 
 .CompletedBadge {
@@ -70,6 +76,7 @@ body {
   z-index: 999;
   cursor: pointer;
 }
+
 
 .SimpleButton:hover {
   color: $buttonHighlight;
