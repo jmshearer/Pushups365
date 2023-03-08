@@ -20,7 +20,7 @@ export class ButtonBar extends React.Component {
    
 
    renderExpandButton(){
-        return <button className="SimpleButton Expand" onClick={this.onExpand}>+</button>
+        return <button className="SimpleButton Expand" onClick={this.onExpand}>±</button>
    }
 
    collapseInterval=false;
@@ -56,14 +56,14 @@ export const NumButton = (props) => {
     if(props.value>0){
         buttonClass="Plus";
     }
-    return <button className={"SimpleButton " + buttonClass} value={props.value} onClick={props.onClick}>
+    return <button className={"SimpleButton " + buttonClass} data-testId={"NumButton" + props.value} value={props.value} onClick={props.onClick}>
             {props.value}            
         </button>;
 
 }
 
 export const ShareButton = (props) => {
-    return <button className="SimpleButton Share" value={props.value} onClick={props.onClick}>
+    return <button className="SimpleButton Share" data-testId="ShareButton" value={props.value} onClick={props.onClick}>
             {props.value}            
         </button>;
 
