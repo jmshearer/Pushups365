@@ -61,10 +61,11 @@ body {
 
 .SimpleButton {
   display: inline-block;
-  min-width: 18%;
+  min-width: 75px;
+  max-width: 18%;
   min-height: 70px;  
   color: $buttonText;
-  font-size: 2em;
+  font-size: 1.5em;
   background: $buttonColor;
   text-align: center;
   border-radius: 75px; 
