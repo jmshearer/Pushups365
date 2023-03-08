@@ -4,7 +4,7 @@ This project was inspired by my nephew who encouraged me to do one pushup per da
 
 ### Demo
 
-[Try a live demo](https://shearermail.com/pushups365/)
+[Try a live demo](https://www.shearermail.com/pushups365/)
 
 
 ### Using the app
