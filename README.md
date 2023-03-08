@@ -4,13 +4,13 @@ This project was inspired by my nephew who encouraged me to do one pushup per da
 
 ### Demo
 
-[Try a live demo](https://www.shearermail.com/pushups365/)
+[Try a live demo](https://apps.shearer-consulting.com/pushups365/)
 
 
 ### Using the app
 
-1. Run the app
-2. Add reps in increments of 1 or 10 until you hit the daily target (auto-calculated)
+1. Run the app (or, better yet, add to homescreen on your mobile device)
+2. Add reps in increments of 1 or 10 until you hit the auto-calculated daily target
 3. At the end of the day the progress resets back to 0
 
 ### Seems kinda simple
