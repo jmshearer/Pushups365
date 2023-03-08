@@ -1,6 +1,6 @@
 # 💪 Pushups365
 
-This project was inspired by my nephew who encouraged me to do one pushup per day, adding one each day...  January 1 = 💪x1, January 31 = 💪x31, ... December 31 = 💪x365.
+This project was inspired by my nephew who encouraged me to do one pushup per day, adding one each day...  January 1 = 💪x1, January 31 = 💪x31, ... December 31 = 💪x365.  Not too bad for the first few weeks but, as you start breaking it up into sets throughout the day, keeping track becomes cumersome.  Hence, Pushups365.
 
 ### Demo
 
