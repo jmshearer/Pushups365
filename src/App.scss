@@ -42,10 +42,11 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 75px;    
+  height: 90px;    
   z-index: 999;
   text-align: center;
   font-family: $fontFamily;  
+  transition: width .25s;
 }
 
 .CompletedBadge {
@@ -53,8 +54,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  min-height: 20em;    
-  z-index: 999;
+  min-height: 20em;      
   line-height: 20em;
 
 }
@@ -113,14 +113,16 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;  
-  background: $pbBackground;
+  bottom: 0;    
   user-select: none;
   color: $pbText;
   font-size: 2em;  
   text-align: center;      
   box-sizing: border-box;
   overflow: hidden;
+  /* background-color: #e5e5f7;*/
+  opacity: 0.8;
+  background-image: radial-gradient( ellipse farthest-corner at 10px 10px , #010101, #010101 50%, #000000 50%);  background-size: 10px 10px;
 }
 
 .Progress {
@@ -130,8 +132,9 @@ body {
   height: 50%;
   left: 0;
   right: 0;
-  background-color: $pbComplete;  
+  background-color: rgba($pbComplete,.9);
   box-sizing: border-box;
+  transition: height .25s;  
 }
 
 .App-header {

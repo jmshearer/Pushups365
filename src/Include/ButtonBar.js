@@ -12,17 +12,15 @@ export class ButtonBar extends React.Component {
     }
   }
 
-   render(){        
+   render(){  
+        return <div className="ButtonBar" onClick={this.onButtonBarClick}>            
+                {this.state.isExpanded ? this.props.children : this.renderExpandButton()}                        
+            </div>
+   }
+   
 
-        if(this.state.isExpanded){
-            return  <div className="ButtonBar" onClick={this.onButtonBarClick}>
-                {this.props.children}
-            </div>;         
-        } else {
-            return  <div className="ButtonBar" onClick={this.onButtonBarClick}>
-                <button className="SimpleButton Expand" onClick={this.onExpand}>+</button>
-            </div>;         
-        }
+   renderExpandButton(){
+        return <button className="SimpleButton Expand" onClick={this.onExpand}>+</button>
    }
 
    collapseInterval=false;
@@ -34,8 +32,7 @@ export class ButtonBar extends React.Component {
    onExpand(){    
     this.setState({
         isExpanded: true
-    });
-    var me = this;
+    });    
     this.resetCollapse();    
    }
 
@@ -50,7 +47,7 @@ export class ButtonBar extends React.Component {
             me.setState({
                 isExpanded: false
             });
-        },1500);
+        },2000);
     }
 }
 

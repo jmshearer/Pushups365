@@ -59,7 +59,7 @@ class PushupTracker extends React.Component {
   }
 
   render() {    
-    var isCompleted = (this.state.target == this.state.numCompleted);
+    var isCompleted = (this.state.target === this.state.numCompleted);
     var shareMessage = "💪x" + this.state.numCompleted;
     return <div>                
         <Toaster position="top-center"/>
@@ -73,9 +73,9 @@ class PushupTracker extends React.Component {
         </VerticalProgressBar>                                
         <center>          
           {isCompleted &&
-            <div className="CompletedBadge">
+            <div className="CompletedBadge">              
               <ConfettiExplosion />
-              <ShareButton onClick={this.handleShare} value={shareMessage} />
+              <ShareButton onClick={this.handleShare} value={shareMessage} />              
             </div>}        
         </center>
         
