@@ -24,8 +24,7 @@ export class ButtonBar extends React.Component {
    }
 
    collapseInterval=false;
-   onButtonBarClick(){
-        console.log("hit");
+   onButtonBarClick(){        
         this.resetCollapse();
    }
 
@@ -40,14 +39,13 @@ export class ButtonBar extends React.Component {
         var me = this;                
         if(me.collapseInterval){        
             clearTimeout(this.collapseInterval);
-            this.collapseInterval=false;
-            console.log("Clear");
+            this.collapseInterval=false;            
         }
         me.collapseInterval = setTimeout(function(){
             me.setState({
                 isExpanded: false
             });
-        },2000);
+        },4000);
     }
 }
 
@@ -56,14 +54,14 @@ export const NumButton = (props) => {
     if(props.value>0){
         buttonClass="Plus";
     }
-    return <button className={"SimpleButton " + buttonClass} data-testId={"NumButton" + props.value} value={props.value} onClick={props.onClick}>
+    return <button className={"SimpleButton " + buttonClass} data-testid={"NumButton" + props.value} value={props.value} onClick={props.onClick}>
             {props.value}            
         </button>;
 
 }
 
 export const ShareButton = (props) => {
-    return <button className="SimpleButton Share" data-testId="ShareButton" value={props.value} onClick={props.onClick}>
+    return <button className="SimpleButton Share" data-testid="ShareButton" value={props.value} onClick={props.onClick}>
             {props.value}            
         </button>;
 
